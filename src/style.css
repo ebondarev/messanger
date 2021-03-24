@@ -1,13 +1,18 @@
+:root {
+  --textarea-height: 44px;
+}
+
 div {
   border: 1px solid;
   position: absolute;
-  height: 250px; /* or % */
+  height: calc(250px + var(--textarea-height));
   width: 300px;
+  box-sizing: border-box;
 }
 
 ul {
   overflow: auto;
-  height: 100%;
+  height: calc(100% - var(--textarea-height));
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -20,4 +25,11 @@ li {
 
 li:first-child {
   margin-top: auto;
+}
+
+textarea {
+  height: var(--textarea-height);
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
 }
